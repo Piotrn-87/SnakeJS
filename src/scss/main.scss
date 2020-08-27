@@ -1,0 +1,23 @@
+@import "_normalize";
+@import "_variables";
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $violet;
+  background: $green;
+}
+
+.test {
+  width: 100%;
+  text-align: center;
+}
