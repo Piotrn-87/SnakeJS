@@ -1,24 +1,27 @@
 "use strict";
 
+console.table("it works");
+
 const BOX = 32;
-const CANVAS = "canvas";
-const canvas = document.getElementById(CANVAS);
-const ground = new Image();
-const food = new Image();
+const CANVAS = document.getElementById("canvas");
+const GROUNDIMG = new Image();
+const FOODIMG = new Image();
 
 let ctx;
+
 let food = {
-  x: 10,
+  x: Math.floor(Math.random() * 17 + 1) * BOX,
+  y: Math.floor(Math.random() * 15 + 3) * BOX,
 };
 
-ctx = canvas.getContext("2d");
+ctx = CANVAS.getContext("2d");
 
-ground.src = "../assets/img/ground.png";
-food.src = "../assets/img/food.png";
+GROUNDIMG.src = "../assets/img/ground.png";
+FOODIMG.src = "../assets/img/food.png";
 
 function draw() {
-  ctx.drawImage(ground, 0, 0);
+  ctx.drawImage(GROUNDIMG, 0, 0);
 
-  // ctx.drawImage(food, food.x, food.y);
+  ctx.drawImage(FOODIMG, food.x, food.y);
 }
 let game = setInterval(draw, 100);
