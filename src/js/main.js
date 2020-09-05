@@ -4,11 +4,15 @@ console.table("it works");
 
 const BOX = 32;
 const CANVAS = document.getElementById("canvas");
-const GROUNDIMG = new Image();
-const FOODIMG = new Image();
+const GROUND_IMG = new Image();
+const FOOD_IMG = new Image();
 
 let ctx;
 let snake = [];
+snake[0] = {
+  x: 1 * BOX,
+  y: 10 * BOX,
+};
 
 let food = {
   x: Math.floor(Math.random() * 17 + 1) * BOX,
@@ -17,19 +21,20 @@ let food = {
 
 ctx = CANVAS.getContext("2d");
 
-GROUNDIMG.src = "../assets/img/ground.png";
-FOODIMG.src = "../assets/img/food.png";
+GROUND_IMG.src = "../assets/img/ground.png";
+FOOD_IMG.src = "../assets/img/food.png";
 
 function draw() {
-  ctx.drawImage(GROUNDIMG, 0, 0);
+  ctx.drawImage(GROUND_IMG, 0, 0);
 
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i == 0 ? "green" : "white";
-    ctx.fillRect(snake[i].x, snake[i].y, 32, 32);
+    ctx.fillRect(snake[i].x, snake[i].y, BOX, BOX);
     ctx.strokeStyle = "red";
-    ctx.strokeRect(snake[i].x, snake[i].y, 32, 32);
+    ctx.strokeRect(snake[i].x, snake[i].y, BOX, BOX);
   }
 
-  ctx.drawImage(FOODIMG, food.x, food.y);
+  // console.log(snake.length);
+  ctx.drawImage(FOOD_IMG, food.x, food.y);
 }
 let game = setInterval(draw, 100);
