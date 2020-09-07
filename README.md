@@ -1,1 +1,1 @@
-# SnakeJS.
+# SnakeJS
