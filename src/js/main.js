@@ -10,7 +10,7 @@ const FOOD_IMG = new Image();
 let ctx;
 let snake = [];
 snake[0] = {
-  x: 1 * BOX,
+  x: 8 * BOX,
   y: 10 * BOX,
 };
 
