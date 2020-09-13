@@ -10,7 +10,7 @@ const FOOD_IMG = new Image();
 let ctx;
 let snake = [];
 snake[0] = {
-  x: 8 * BOX,
+  x: 9 * BOX,
   y: 10 * BOX,
 };
 
@@ -30,7 +30,7 @@ function draw() {
   for (let i = 0; i < snake.length; i++) {
     ctx.fillStyle = i == 0 ? "green" : "white";
     ctx.fillRect(snake[i].x, snake[i].y, BOX, BOX);
-    ctx.strokeStyle = "red";
+    ctx.strokeStyle = "purple";
     ctx.strokeRect(snake[i].x, snake[i].y, BOX, BOX);
   }
 
